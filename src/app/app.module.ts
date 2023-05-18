@@ -28,7 +28,7 @@ const routes : Routes =[
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
-    RouterModule.forRoot(routes)
+    RouterModule.forRoot(routes),
   ],
   providers: [
     DestinosApiClient
