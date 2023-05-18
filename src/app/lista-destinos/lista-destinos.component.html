@@ -1,0 +1,43 @@
+<div class="row">
+    <div class="col">
+        <div class="card text-center tarjeta-wishlist">
+            <div class="card-header">
+              WishList
+            </div>
+            <div class="card-body">
+                <div class="tarjeta">
+                <p class="card-text">
+                    Complete los espacios en blanco para buscar su destino
+                    <!--Llamando a form destino viaje-->
+                   <app-form-destino-viaje (onItemAdded)="agregado($event)"></app-form-destino-viaje>
+                   <!--
+                    <div class="formulario">
+                        <label for="Nombre">Nombre</label>
+                        <input class="form-control form-control-sm" type="text" placeholder="Ingrese el nombre" id="form" #nombre>
+                    </div>
+                    <div class="formulario" >
+                        <label for="Url">Imagen</label>  
+                        <input class="form-control form-control-sm" type="text" placeholder="Ingrese la url de la imagen" id="form" #url>
+                        <br>
+                    </div>-->
+                
+                </div>
+            </div>
+            <div class="card-footer text-muted">
+            </div>
+          </div>
+    </div>
+</div>
+
+<div class="row row flex">
+    <app-destino-viaje 
+    *ngFor="let d of destinosApiClient.getAll(); let i=index"  
+        [destino]="d"
+        [idx]="i+1"
+        (clicked)="elegido(d)"
+    ></app-destino-viaje>
+    <h4>ACTIVIDAD</h4>
+    <ul>
+        <li *ngFor="let u of updates;">{{u}}</li>
+    </ul>
+</div>

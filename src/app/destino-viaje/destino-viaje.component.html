@@ -1,0 +1,26 @@
+
+<div class="card card-destinos" style="width: 18rem;">
+    <section class="container">
+        <img class="card-img-top" src="https://www.islandlifemexico.com/wp-content/uploads/2022/07/is-cancun-safe-1.jpg.webp" alt="Card image cap">
+        <div class="cont1"><span><p>{{position}}</p></span></div>
+    </section>
+    <div class="card-body">
+      <h5 class="card-title">{{destino.nombre}}</h5>
+      <p class="card-text">Servicios</p>
+      <ul>
+        <li ng *ngFor="let s of destino.servicios">
+            <span [ngSwitch]="s">
+                <i *ngSwitchCase="'piscina'" style="color: brown;">{{s}}</i>
+                <i *ngSwitchDefault>{{s}}</i>
+            </span>
+        </li>
+      </ul>
+      <a href="#" class="btn btn-success" style="width: 30%;" (click)="ir()">Ir!</a>
+      <span *ngIf="destino.isSelected()">
+        <span ngNonBindable>- PREFERIDO -</span>
+      </span>
+      <a [routerLink]="['/destino']">destino</a>
+    </div>
+  </div>
+
+
