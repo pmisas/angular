@@ -32,7 +32,7 @@ export interface AppState {
 }
 
 const reducers: ActionReducerMap<AppState> = {
-  DestinosViajesState: reducerDestinosViajes
+  destinos: reducerDestinosViajes
 };
 
 const reducersInitialState = {
